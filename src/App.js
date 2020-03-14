@@ -12,6 +12,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.getQuote();
+  }
+
+  getQuote = () => {
     fetch(`https://api.quotable.io/random`)
     .then((response) => {
         if(response.status === 200) {
@@ -36,8 +40,8 @@ class App extends React.Component {
         <div id="quote-box">
           <div id="text">{this.state.quote}</div>
           <div id="author">{this.state.author}</div>
-          <div id="new-quote">
-          <a href="#" id="tweet-quote"></a></div>
+          <button id="new-quote" onClick={this.getQuote}>Get New Quote</button>
+          <a href="#" id="tweet-quote"></a>
         </div>
 
       </div>
