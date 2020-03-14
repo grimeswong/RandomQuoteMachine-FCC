@@ -19,11 +19,9 @@ class App extends React.Component {
     fetch(`https://api.quotable.io/random`)
     .then((response) => {
         if(response.status === 200) {
-          console.log(response);
           return response.json();
         }
     }).then(data => {
-      console.log(data)
       this.setState({
         quote: data.content,
         author: data.author
@@ -35,13 +33,15 @@ class App extends React.Component {
   }
 
   render() {
+    let tweetLink = `https://twitter.com/intent/tweet?text="${this.state.quote}" - ${this.state.author}`
     return (
       <div className="App">
         <div id="quote-box">
           <div id="text">{this.state.quote}</div>
           <div id="author">{this.state.author}</div>
           <button id="new-quote" onClick={this.getQuote}>Get New Quote</button>
-          <a href="#" id="tweet-quote"></a>
+          <a href={tweetLink} id="tweet-quote" target="_blank">Tweet Quote</a>
+
         </div>
 
       </div>
