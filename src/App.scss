@@ -1,3 +1,28 @@
+$color: #fff;
+$bgcolor: rgb(180, 20, 235);
+
+@mixin hover {
+  opacity: 1;
+  outline: none;
+  transition: 0.5s;
+  box-shadow: 0px 0px 45px -15px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 45px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 45px -15px rgba(0,0,0,0.75);
+}
+
+@mixin btn {
+  margin: 0 2rem;
+  padding: 1rem 1.5rem;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: $bgcolor;
+  background-color: $color;
+  opacity: .8;
+}
+
+
 .App {
   width: 100vw;
   height: 100vh;
@@ -5,4 +30,38 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: $bgcolor;
+  color: $color;
+  position: relative;
+
+  #quote-box {
+    width: 70%;
+    #text{
+      padding: 3rem 0;
+      font-size: 2rem;
+    }
+    #author{
+      padding: 3rem;
+      font-size: 1.5rem;
+      float: right;
+    }
+  }
+
+  .btn-wrapper {
+    position: absolute;
+    bottom: 3rem;
+    left: auto;
+    right: auto;
+    padding: 1rem;
+    button {
+      @include btn();
+      &:hover {
+        @include hover();
+      }
+    }
+
+    #tweet-quote {
+      text-decoration: none;
+    }
+  }
 }

@@ -37,11 +37,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <div id="quote-box">
-          <div id="text">{this.state.quote}</div>
+          <div id="text">"{this.state.quote}"</div>
           <div id="author">{this.state.author}</div>
+        </div>
+        <div className="btn-wrapper">
           <button id="new-quote" onClick={this.getQuote}>Get New Quote</button>
-          <a href={tweetLink} id="tweet-quote" target="_blank">Tweet Quote</a>
-
+          <a href={tweetLink} id="tweet-quote" target="_blank"><button>Tweet Quote</button></a>
         </div>
 
       </div>
