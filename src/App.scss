@@ -43,25 +43,20 @@ $bgcolor: rgb(180, 20, 235);
     #author{
       padding: 3rem;
       font-size: 1.5rem;
-      float: right;
     }
-  }
+    .btn-wrapper {
+      padding: 5rem 3rem 2rem;
+      button {
+        @include btn();
+        &:hover {
+          @include hover();
+        }
+      }
 
-  .btn-wrapper {
-    position: absolute;
-    bottom: 3rem;
-    left: auto;
-    right: auto;
-    padding: 1rem;
-    button {
-      @include btn();
-      &:hover {
-        @include hover();
+      #tweet-quote {
+        text-decoration: none;
       }
     }
-
-    #tweet-quote {
-      text-decoration: none;
-    }
   }
+
 }
